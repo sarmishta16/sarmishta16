@@ -65,7 +65,7 @@ const resumeAnswers = [
   {
     keywords: ["skills", "tools", "technology", "technologies", "siem", "splunk", "wireshark", "nmap", "nessus", "burp", "snort", "kali"],
     answer:
-      "Her security toolkit includes Splunk SIEM, Wireshark, Nmap, Nessus, Burp Suite, Snort IDS, and Kali Linux. She also works with Python, JavaScript, SQL, Solidity, Bash, PowerShell, REST API integration, AWS, and Microsoft Azure.",
+      "Her security toolkit includes Splunk SIEM, Wireshark, Nmap, Nessus, Burp Suite, Snort IDS, and Kali Linux. She also works with Python, JavaScript, SQL, Solidity, Bash, PowerShell, REST API integration, AWS, Microsoft Azure, network security, cloud security, access control, and traffic analysis.",
   },
   {
     keywords: ["project", "projects", "github", "smart contract", "ethereum", "blockchain", "threat intelligence", "harvester", "ai api", "api builder", "file integrity", "fim", "monitoring"],
