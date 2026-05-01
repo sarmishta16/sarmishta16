@@ -116,6 +116,8 @@ const closeAiPanel = () => {
   aiPanel.hidden = true;
 };
 
+closeAiPanel();
+
 const addMessage = (message, sender) => {
   const bubble = document.createElement("div");
   bubble.className = `ai-message ${sender}`;
