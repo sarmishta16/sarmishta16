@@ -607,20 +607,23 @@ li + li {
 }
 
 .meter-label {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 16px;
+  align-items: baseline;
   color: #dbe9f6;
   font-weight: 800;
 }
 
 .meter-label span {
   min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .meter-label b {
   color: var(--green);
   font-family: "JetBrains Mono", monospace;
+  white-space: nowrap;
 }
 
 .meter-track {
@@ -828,6 +831,10 @@ mark {
   border-radius: 8px;
   background: linear-gradient(145deg, rgba(12, 28, 48, 0.98), rgba(6, 12, 24, 0.96));
   box-shadow: var(--shadow);
+}
+
+.ai-panel[hidden] {
+  display: none;
 }
 
 .ai-panel-header {
@@ -1099,5 +1106,10 @@ mark {
 
   .ai-panel {
     bottom: 68px;
+  }
+
+  .meter-label {
+    gap: 10px;
+    font-size: 0.95rem;
   }
 }
