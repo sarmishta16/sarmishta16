@@ -297,6 +297,56 @@ h3 {
   margin-top: 28px;
 }
 
+.ai-hero-prompt {
+  display: grid;
+  max-width: 720px;
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid rgba(123, 232, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(3, 8, 15, 0.5);
+  gap: 14px;
+}
+
+.ai-hero-prompt strong,
+.ai-hero-prompt span {
+  display: block;
+}
+
+.ai-hero-prompt strong {
+  color: var(--text);
+}
+
+.ai-hero-prompt span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.ai-prompt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.ai-prompt-actions button {
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid rgba(123, 232, 255, 0.22);
+  border-radius: 8px;
+  background: rgba(10, 22, 39, 0.78);
+  color: var(--cyan);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.ai-prompt-actions button:hover,
+.ai-prompt-actions button:focus-visible {
+  border-color: rgba(116, 247, 163, 0.62);
+  color: var(--green);
+}
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -339,6 +389,7 @@ h3 {
 .timeline-card,
 .case-card,
 .toolkit-panel,
+.career-card,
 .glass-card,
 .contact-card {
   border: 1px solid var(--line);
@@ -350,6 +401,7 @@ h3 {
 .timeline-card,
 .case-card,
 .toolkit-panel,
+.career-card,
 .glass-card,
 .contact-card {
   opacity: 0;
@@ -360,6 +412,7 @@ h3 {
 .timeline-card.revealed,
 .case-card.revealed,
 .toolkit-panel.revealed,
+.career-card.revealed,
 .glass-card.revealed,
 .contact-card.revealed {
   opacity: 1;
@@ -491,6 +544,40 @@ h3 {
 .metric-grid span {
   color: var(--muted);
   font-size: 0.75rem;
+}
+
+.career-focus {
+  padding-top: 34px;
+}
+
+.compact-heading {
+  margin-bottom: 18px;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.career-card {
+  padding: 18px;
+}
+
+.career-card span {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--green);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.career-card strong {
+  display: block;
+  color: #dbe9f6;
+  line-height: 1.35;
 }
 
 .split-section {
@@ -704,6 +791,40 @@ li + li {
 
 .case-card p {
   color: #c8d8e7;
+}
+
+.case-notes {
+  margin-top: 18px;
+  margin-bottom: 18px;
+  border: 1px solid rgba(123, 232, 255, 0.16);
+  border-radius: 8px;
+  background: rgba(3, 8, 15, 0.44);
+}
+
+.case-notes summary {
+  cursor: pointer;
+  padding: 11px 12px;
+  color: var(--green);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.case-notes div {
+  display: grid;
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+.case-notes p {
+  margin: 0;
+  color: #c8d8e7;
+  font-size: 0.92rem;
+}
+
+.case-notes b {
+  color: var(--text);
 }
 
 .placeholder-card {
@@ -1039,6 +1160,7 @@ mark {
   }
 
   .toolkit-stack,
+  .career-grid,
   .credential-columns {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1102,6 +1224,7 @@ mark {
   .metric-grid,
   .case-grid,
   .toolkit-stack,
+  .career-grid,
   .credential-columns {
     grid-template-columns: 1fr;
   }
@@ -1114,6 +1237,7 @@ mark {
   .case-card,
   .toolkit-panel,
   .skill-bars,
+  .career-card,
   .glass-card,
   .contact-card {
     padding: 20px;
@@ -1145,7 +1269,8 @@ mark {
   }
 
   .hero-actions,
-  .button {
+  .button,
+  .ai-prompt-actions button {
     width: 100%;
   }
 

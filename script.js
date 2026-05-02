@@ -22,7 +22,7 @@ updateTopbar();
 window.addEventListener("scroll", updateTopbar, { passive: true });
 
 const revealTargets = document.querySelectorAll(
-  ".timeline-card, .case-card, .toolkit-panel, .glass-card, .contact-card"
+  ".timeline-card, .case-card, .toolkit-panel, .career-card, .glass-card, .contact-card"
 );
 
 if ("IntersectionObserver" in window) {
@@ -50,6 +50,7 @@ const aiMessages = document.querySelector("[data-ai-messages]");
 const aiForm = document.querySelector("[data-ai-form]");
 const aiInput = document.querySelector("#ai-question");
 const suggestionButtons = document.querySelectorAll("[data-question]");
+const heroPromptButtons = document.querySelectorAll("[data-ai-prompt]");
 
 const resumeAnswers = [
   {
@@ -167,14 +168,24 @@ const getAiAnswer = (question) => {
   return match ? match.answer : fallbackAnswer;
 };
 
+const askAiQuestion = (question) => {
+  openAiPanel();
+  aiInput.value = question;
+  aiForm.requestSubmit();
+};
+
 aiOpenButtons.forEach((button) => button.addEventListener("click", openAiPanel));
 aiCloseButton.addEventListener("click", closeAiPanel);
 
 suggestionButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const question = button.dataset.question;
-    aiInput.value = question;
-    aiForm.requestSubmit();
+    askAiQuestion(button.dataset.question);
+  });
+});
+
+heroPromptButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    askAiQuestion(button.dataset.aiPrompt);
   });
 });
 
